@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sakuni Abeygunawardhana — Business Analytics & Software Engineering</title>
+<meta name="description" content="Portfolio of Sakuni Nimsara Abeygunawardhana — IT Undergraduate, aspiring Business Analyst & Software Engineer, University of Ruhuna.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F6F5F0;
+    --surface: #FFFFFF;
+    --ink: #12203A;
+    --ink-soft: #566078;
+    --muted: #8A93A6;
+    --accent: #2452C4;      /* corporate blue — primary highlight */
+    --accent-soft: #E4EAFB;
+    --teal: #3C6DA8;        /* steel blue — secondary accent */
+    --teal-soft: #E7EEF7;
+    --line: #E4E1D6;
+    --line-strong: #D3CFC0;
+    --display: 'Space Grotesk', sans-serif;
+    --sans: 'Inter', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--accent); color:#fff; }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+
+  .container{ max-width:1040px; margin:0 auto; padding:0 32px; }
+
+  /* ---------- faint paper texture ---------- */
+  .paper{
+    position:fixed; inset:0; z-index:-1;
+    background-image: radial-gradient(var(--line-strong) 1px, transparent 1px);
+    background-size: 22px 22px;
+    opacity:0.35;
+  }
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,245,240,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1040px; margin:0 auto; padding:20px 32px;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .nav-brand{ font-family:var(--display); font-weight:700; font-size:17px; letter-spacing:-0.01em; }
+  .nav-brand .dot{ color:var(--accent); }
+  .nav-links{ display:flex; gap:30px; list-style:none; font-size:14px; color:var(--ink-soft); }
+  .nav-links a{ position:relative; padding-bottom:3px; transition:color .2s ease; }
+  .nav-links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1.5px;
+    background:var(--accent); transition:width .25s ease;
+  }
+  .nav-links a:hover::after{ width:100%; }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-cta{
+    font-family:var(--mono); font-size:12.5px; padding:9px 16px;
+    border:1px solid var(--ink); border-radius:5px; white-space:nowrap;
+    transition:all .2s ease;
+  }
+  .nav-cta:hover{ background:var(--ink); color:var(--bg); }
+  @media (max-width:760px){ .nav-links{ display:none; } }
+
+  section{ padding:104px 0; }
+  section:first-of-type{ padding-top:0; }
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; color:var(--teal);
+    text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px;
+  }
+  h2.section-title{
+    font-family:var(--display); font-weight:700; font-size:clamp(26px,3.4vw,36px);
+    margin-bottom:42px; color:var(--ink); letter-spacing:-0.01em;
+  }
+  h2.section-title span{
+    display:block; font-family:var(--sans); font-weight:400; font-size:0.46em;
+    color:var(--muted); margin-top:8px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding:76px 0 90px; }
+  .hero-grid{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:44px; align-items:start; }
+  @media (max-width:840px){ .hero-grid{ grid-template-columns:1fr; } }
+
+  .hero-eyebrow{
+    font-family:var(--mono); font-size:13px; color:var(--teal);
+    margin-bottom:20px; display:flex; align-items:center; gap:8px;
+  }
+  .hero-eyebrow .pip{ width:6px; height:6px; border-radius:50%; background:var(--accent); }
+  .hero h1{
+    font-family:var(--display); font-weight:700; font-size:clamp(34px,5.4vw,54px);
+    line-height:1.08; letter-spacing:-0.02em; margin-bottom:20px;
+  }
+  .hero h1 em{ font-style:normal; color:var(--accent); }
+  .hero-role{
+    font-family:var(--mono); font-size:15px; color:var(--ink-soft); margin-bottom:22px;
+  }
+  .hero-role .sep{ color:var(--line-strong); margin:0 8px; }
+  .hero-lede{ font-size:17px; color:var(--ink-soft); max-width:52ch; margin-bottom:32px; }
+  .hero-lede strong{ color:var(--ink); font-weight:600; }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:12px; }
+  .btn{
+    font-family:var(--mono); font-size:13.5px; padding:13px 20px; border-radius:6px;
+    border:1px solid var(--line-strong); color:var(--ink-soft); display:inline-flex;
+    align-items:center; gap:8px; transition:all .2s ease; background:var(--surface);
+  }
+  .btn.primary{ background:var(--ink); color:#fff; border-color:var(--ink); font-weight:500; }
+  .btn.primary:hover{ background:var(--accent); border-color:var(--accent); transform:translateY(-2px); }
+  .btn:not(.primary):hover{ border-color:var(--ink); color:var(--ink); transform:translateY(-2px); }
+
+  /* ---------- Hero photo card ---------- */
+  .hero-right{ display:flex; flex-direction:column; gap:20px; }
+  .photo-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    overflow:hidden; box-shadow:0 1px 2px rgba(18,32,58,0.04), 0 24px 48px -32px rgba(18,32,58,0.18);
+    animation:rise .7s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .photo-card img{
+    width:100%; aspect-ratio:4/3; object-fit:cover; display:block;
+  }
+  .photo-caption{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:14px 18px; border-top:1px solid var(--line);
+  }
+  .photo-caption .pname{ font-family:var(--display); font-weight:600; font-size:14px; color:var(--ink); }
+  .photo-caption .prole{ font-family:var(--mono); font-size:11.5px; color:var(--teal); }
+
+  /* ---------- Hero stat card (signature element: mini data widget) ---------- */
+  .stat-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:26px 26px 22px; box-shadow:0 1px 2px rgba(18,32,58,0.04), 0 24px 48px -32px rgba(18,32,58,0.18);
+    animation:rise .7s cubic-bezier(.2,.8,.2,1) both; animation-delay:.1s;
+  }
+  @keyframes rise{ from{ opacity:0; transform:translateY(16px);} to{ opacity:1; transform:translateY(0);} }
+  .stat-card-head{
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:var(--mono); font-size:11.5px; color:var(--muted);
+    text-transform:uppercase; letter-spacing:0.08em; margin-bottom:20px;
+    padding-bottom:14px; border-bottom:1px solid var(--line);
+  }
+  .stat-row{ margin-bottom:18px; }
+  .stat-row:last-child{ margin-bottom:0; }
+  .stat-row-top{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:7px; }
+  .stat-row-label{ font-size:13px; color:var(--ink-soft); }
+  .stat-row-val{ font-family:var(--mono); font-weight:600; font-size:14px; color:var(--ink); }
+  .bar-track{ height:6px; background:var(--bg); border-radius:3px; overflow:hidden; border:1px solid var(--line); }
+  .bar-fill{ height:100%; border-radius:3px; background:linear-gradient(90deg, var(--teal), var(--accent)); width:0%; transition:width 1.1s cubic-bezier(.2,.8,.2,1); }
+
+  /* ---------- About ---------- */
+  .about-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:56px; }
+  @media (max-width:780px){ .about-grid{ grid-template-columns:1fr; } }
+  .lede{ font-size:18px; color:var(--ink-soft); max-width:58ch; }
+  .lede strong{ color:var(--ink); font-weight:600; }
+  .about-facts{ display:flex; flex-direction:column; border-top:1px solid var(--line-strong); }
+  .fact{ display:flex; justify-content:space-between; padding:16px 0; border-bottom:1px solid var(--line); gap:16px; }
+  .fact-label{ font-family:var(--mono); font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; padding-top:2px; white-space:nowrap; }
+  .fact-val{ font-size:14.5px; color:var(--ink); text-align:right; }
+
+  /* ---------- Skills ---------- */
+  .skill-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  @media (max-width:900px){ .skill-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .skill-grid{ grid-template-columns:1fr; } }
+  .skill-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:20px; transition:transform .25s ease, border-color .25s ease;
+  }
+  .skill-card:hover{ transform:translateY(-4px); border-color:var(--line-strong); }
+  .skill-card-head{
+    font-family:var(--display); font-weight:600; font-size:14.5px; color:var(--ink);
+    margin-bottom:14px; display:flex; align-items:center; gap:8px;
+  }
+  .skill-card-head .sw{ width:8px; height:8px; border-radius:2px; background:var(--teal); flex:none; }
+  .skill-tags{ display:flex; flex-wrap:wrap; gap:7px; }
+  .tag{
+    font-family:var(--mono); font-size:12px; padding:5px 10px; background:var(--bg);
+    border:1px solid var(--line); border-radius:5px; color:var(--ink-soft); transition:all .2s ease;
+  }
+  .tag:hover{ border-color:var(--teal); color:var(--ink); background:var(--teal-soft); }
+
+  /* ---------- Experience ---------- */
+  .timeline{ display:flex; flex-direction:column; }
+  .trow{ display:grid; grid-template-columns:150px 1fr; gap:24px; padding:30px 0; border-top:1px solid var(--line); }
+  .trow:last-child{ border-bottom:1px solid var(--line); }
+  @media (max-width:640px){ .trow{ grid-template-columns:1fr; gap:6px; } }
+  .trow-date{ font-family:var(--mono); font-size:12.5px; color:var(--teal); padding-top:3px; }
+  .trow-role{ font-family:var(--display); font-weight:600; font-size:17px; margin-bottom:3px; }
+  .trow-meta{ font-size:13.5px; color:var(--muted); margin-bottom:14px; }
+  .trow ul{ padding-left:18px; color:var(--ink-soft); font-size:14.5px; display:flex; flex-direction:column; gap:7px; }
+
+  /* ---------- Projects ---------- */
+  .project-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    margin-bottom:22px; overflow:hidden; transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;
+  }
+  .project-card:hover{ transform:translateY(-5px); box-shadow:0 24px 48px -30px rgba(18,32,58,0.25); }
+  .project-top{ padding:26px 28px 0; }
+  .project-tag-row{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+  .project-index{ font-family:var(--mono); font-size:12px; color:var(--muted); }
+  .project-period{ font-family:var(--mono); font-size:12px; color:var(--muted); }
+  .project-name{ font-family:var(--display); font-weight:700; font-size:21px; margin-bottom:4px; color:var(--ink); }
+  .project-role{ font-size:13.5px; color:var(--teal); font-weight:500; margin-bottom:16px; }
+  .project-body{ padding:0 28px 26px; }
+  .project-body ul{ padding-left:18px; color:var(--ink-soft); font-size:14.5px; display:flex; flex-direction:column; gap:7px; margin-bottom:18px; }
+  .stack-row{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px; }
+  .project-links{ display:flex; gap:10px; flex-wrap:wrap; }
+  .project-links a{
+    font-family:var(--mono); font-size:12.5px; padding:8px 14px; border:1px solid var(--line-strong);
+    border-radius:5px; color:var(--ink-soft); transition:all .2s ease;
+  }
+  .project-links a:hover{ border-color:var(--ink); color:var(--ink); }
+
+  /* ---------- Education / Certs ---------- */
+  .split-grid{ display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+  @media (max-width:760px){ .split-grid{ grid-template-columns:1fr; } }
+  .sub-head{
+    font-family:var(--mono); font-size:12.5px; color:var(--teal); text-transform:uppercase;
+    letter-spacing:0.08em; margin-bottom:18px; padding-bottom:10px; border-bottom:1px solid var(--line-strong);
+  }
+  .edu-block{ margin-bottom:22px; }
+  .edu-degree{ font-family:var(--display); font-weight:600; font-size:16px; }
+  .edu-school{ color:var(--ink-soft); font-size:14px; margin:3px 0 6px; }
+  .edu-meta{ font-family:var(--mono); font-size:12px; color:var(--muted); }
+  .cert-list{ list-style:none; display:flex; flex-direction:column; gap:11px; }
+  .cert-list li{ font-size:14px; color:var(--ink-soft); padding-left:20px; position:relative; }
+  .cert-list li::before{ content:'✓'; position:absolute; left:0; color:var(--teal); font-weight:600; font-size:12px; top:2px; }
+  .cert-list.progress li::before{ content:'···'; color:var(--accent); letter-spacing:1px; }
+
+  /* ---------- Contact / footer ---------- */
+  footer{ background:var(--ink); color:#EDEFF3; padding:88px 0 40px; }
+  .foot-eyebrow{ font-family:var(--mono); font-size:13px; color:#9FB3C8; margin-bottom:14px; }
+  footer h3{
+    font-family:var(--display); font-weight:700; font-size:clamp(28px,4.4vw,42px);
+    color:#fff; margin-bottom:36px; max-width:640px; letter-spacing:-0.01em;
+  }
+  footer h3 em{ font-style:normal; color:var(--accent); }
+  .contact-links{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:64px; }
+  .contact-links a{
+    font-family:var(--mono); font-size:13px; padding:13px 18px; border:1px solid #2C3B54;
+    border-radius:6px; color:#EDEFF3; transition:all .2s ease;
+  }
+  .contact-links a:hover{ border-color:var(--accent); background:rgba(36,82,196,0.12); }
+  .foot-meta{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-family:var(--mono);
+    font-size:11.5px; color:#6C7A93; border-top:1px solid #253249; padding-top:24px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+    html{ scroll-behavior:auto; }
+  }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1); }
+  .reveal.visible{ opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<div class="paper"></div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">Sakuni<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="#contact">Get in touch</a>
+  </div>
+</nav>
+
+<header class="container hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow"><span class="pip"></span>Final-year IT Undergraduate · University of Ruhuna</div>
+      <h1>Sakuni Abeygunawardhana</h1>
+      <div class="hero-role">Aspiring Business Analyst <span class="sep">/</span> Software Engineer</div>
+      <p class="hero-lede">
+        I build software with a data-driven eye — from <strong>relational database design</strong> to
+        <strong>IoT-integrated systems</strong> — and I like translating messy requirements into things
+        people can actually use. Currently teaching IT to <strong>85+ students</strong> while finishing
+        my degree with a <strong>3.88 GPA</strong>.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">View Projects →</a>
+        <a class="btn" href="Sakuni-CV.pdf" download>↓ Download CV</a>
+        <a class="btn" href="https://linkedin.com/in/sakuni-n-301b77346" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/sakuninimsara2000" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+    <div class="photo-card">
+      <img src="profile.jpg" alt="Sakuni Nimsara Abeygunawardhana">
+      <div class="photo-caption">
+        <span class="pname">Sakuni Abeygunawardhana</span>
+        <span class="prole">Matara, Sri Lanka</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card-head"><span>Snapshot</span><span>2026</span></div>
+      <div class="stat-row">
+        <div class="stat-row-top"><span class="stat-row-label">GPA (First Class)</span><span class="stat-row-val">3.88 / 4.00</span></div>
+        <div class="bar-track"><div class="bar-fill" data-w="97"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-row-top"><span class="stat-row-label">Students taught</span><span class="stat-row-val">85+</span></div>
+        <div class="bar-track"><div class="bar-fill" data-w="85"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-row-top"><span class="stat-row-label">Certifications completed</span><span class="stat-row-val">7+</span></div>
+        <div class="bar-track"><div class="bar-fill" data-w="70"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-row-top"><span class="stat-row-label">Flagship projects shipped</span><span class="stat-row-val">2</span></div>
+        <div class="bar-track"><div class="bar-fill" data-w="50"></div></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="container reveal">
+  <div class="eyebrow">About</div>
+  <h2 class="section-title">Who I am<span>The short version</span></h2>
+  <div class="about-grid">
+    <p class="lede">
+      Final-year <strong>Information Technology</strong> undergraduate with hands-on experience across
+      <strong>software development</strong>, <strong>relational database design</strong>, and
+      <strong>data analysis</strong>. Comfortable across Java, Python and SQL, with applied exposure to
+      requirement gathering, system analysis, and data mining through academic and IoT-based projects.
+      I'm currently teaching IT to 85+ students across two institutions — which has sharpened how I
+      explain technical ideas to non-technical people, a skill I'd bring straight into a business analyst
+      or software engineering role.
+    </p>
+    <div class="about-facts">
+      <div class="fact"><span class="fact-label">Degree</span><span class="fact-val">B.A. (Hons) IT, Univ. of Ruhuna</span></div>
+      <div class="fact"><span class="fact-label">GPA</span><span class="fact-val">3.88 / 4.00 — First Class</span></div>
+      <div class="fact"><span class="fact-label">Focus</span><span class="fact-val">Business Analytics & Software Engineering</span></div>
+      <div class="fact"><span class="fact-label">Currently</span><span class="fact-val">Teaching IT · finishing final year</span></div>
+      <div class="fact"><span class="fact-label">Based in</span><span class="fact-val">Morawaka, Sri Lanka</span></div>
+      <div class="fact"><span class="fact-label">Status</span><span class="fact-val">Open to graduate roles</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="container reveal">
+  <div class="eyebrow">Skills</div>
+  <h2 class="section-title">Technical Skills<span>Grouped by area</span></h2>
+  <div class="skill-grid">
+    <div class="skill-card">
+      <div class="skill-card-head"><span class="sw"></span>Programming Languages</div>
+      <div class="skill-tags">
+        <span class="tag">Java</span><span class="tag">Python</span><span class="tag">C</span>
+        <span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">Visual Basic</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-head"><span class="sw"></span>Data & Analytics</div>
+      <div class="skill-tags">
+        <span class="tag">SQL Querying</span><span class="tag">Relational DB Design</span>
+        <span class="tag">Data Mining</span><span class="tag">Data Modelling</span>
+        <span class="tag">Excel</span><span class="tag">Reporting</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-head"><span class="sw"></span>Web & Mobile Development</div>
+      <div class="skill-tags">
+        <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">PHP</span>
+        <span class="tag">Bootstrap</span><span class="tag">Node.js</span><span class="tag">Android Studio</span>
+        <span class="tag">XML</span><span class="tag">Firebase</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-head"><span class="sw"></span>Business Analysis</div>
+      <div class="skill-tags">
+        <span class="tag">Requirement Gathering</span><span class="tag">System Analysis</span>
+        <span class="tag">SDLC</span><span class="tag">Software Testing</span>
+        <span class="tag">Technical Docs</span><span class="tag">Stakeholder Comms</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-head"><span class="sw"></span>Databases</div>
+      <div class="skill-tags">
+        <span class="tag">MySQL</span><span class="tag">Firebase Realtime DB</span><span class="tag">Cloud Firestore</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-head"><span class="sw"></span>Tools & Platforms</div>
+      <div class="skill-tags">
+        <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">VS Code</span>
+        <span class="tag">Figma</span><span class="tag">MS Word</span><span class="tag">Excel</span><span class="tag">PowerPoint</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="container reveal">
+  <div class="eyebrow">Experience</div>
+  <h2 class="section-title">Experience<span>Most recent first</span></h2>
+  <div class="timeline">
+    <div class="trow">
+      <div class="trow-date">May 2026 — Present</div>
+      <div>
+        <div class="trow-role">Visiting Lecturer — Information Technology</div>
+        <div class="trow-meta">Technical College, Matara</div>
+        <ul>
+          <li>Deliver IT lectures and lab sessions to ~35 students, covering computer fundamentals, information systems, and office productivity.</li>
+          <li>Design lesson plans and hands-on materials that translate theory into applied technical practice.</li>
+          <li>Run practical training in Word, Excel and PowerPoint to build data handling and reporting skills.</li>
+          <li>Mentor students through assessments and guided problem-solving exercises.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="trow">
+      <div class="trow-date">Apr 2026 — Present</div>
+      <div>
+        <div class="trow-role">Information Technology Instructor</div>
+        <div class="trow-meta">Dept. of IT, University of Ruhuna — Advanced Certificate in ICT</div>
+        <ul>
+          <li>Conduct practical IT training for ~50 students in the Advanced Certificate in ICT programme.</li>
+          <li>Teach office applications, programming fundamentals, web development, multimedia and graphic design.</li>
+          <li>Build lab exercises and learning resources supporting applied software understanding.</li>
+          <li>Support students with troubleshooting, debugging and assignment guidance.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="trow">
+      <div class="trow-date">Feb 2023 — Apr 2023</div>
+      <div>
+        <div class="trow-role">Trainee Intern</div>
+        <div class="trow-meta">Bank of Ceylon, Morawaka Branch</div>
+        <ul>
+          <li>Supported daily branch operations during a three-month placement across front-office and admin workflows.</li>
+          <li>Maintained and verified customer records, ensuring accuracy and confidentiality compliance.</li>
+          <li>Built strong attention to detail in data entry within a regulated environment.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="container reveal">
+  <div class="eyebrow">Projects</div>
+  <h2 class="section-title">Featured Projects<span>Things I've built and shipped</span></h2>
+
+  <div class="project-card">
+    <div class="project-top">
+      <div class="project-tag-row"><span class="project-index">Project 01</span><span class="project-period">2025 – 2026</span></div>
+      <div class="project-name">Smart Hostel Management System</div>
+      <div class="project-role">Project Manager & Developer</div>
+    </div>
+    <div class="project-body">
+      <ul>
+        <li>Led development of an IoT-enabled hostel management system, from requirements through testing and delivery.</li>
+        <li>Ran requirement gathering and system analysis with stakeholders to define scope and specifications.</li>
+        <li>Built core management modules in Java on a normalised relational database.</li>
+        <li>Integrated ESP32 microcontrollers with Firebase for real-time IoT data capture and monitoring.</li>
+        <li>Built the web interface with HTML, CSS, JavaScript and Node.js, and tested every module.</li>
+      </ul>
+      <div class="stack-row">
+        <span class="tag">Java</span><span class="tag">MySQL</span><span class="tag">HTML/CSS/JS</span>
+        <span class="tag">Node.js</span><span class="tag">Firebase</span><span class="tag">ESP32 / IoT</span>
+      </div>
+      <div class="project-links">
+        <a href="#" target="_blank" rel="noopener">↗ GitHub</a>
+        <a href="#" target="_blank" rel="noopener">↗ Live Demo</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-top">
+      <div class="project-tag-row"><span class="project-index">Project 02</span><span class="project-period">2025</span></div>
+      <div class="project-name">GlameNest — Online Shopping Mobile App</div>
+      <div class="project-role">Individual Project</div>
+    </div>
+    <div class="project-body">
+      <ul>
+        <li>Built a native Android e-commerce app in Java for browsing products and placing orders.</li>
+        <li>Implemented Firebase Authentication and backend services for secure login and real-time sync.</li>
+        <li>Designed a responsive UI with XML layouts.</li>
+        <li>Prototyped wireframes and interactive flows in Figma before development.</li>
+      </ul>
+      <div class="stack-row">
+        <span class="tag">Android Studio</span><span class="tag">Java</span><span class="tag">XML</span>
+        <span class="tag">Firebase</span><span class="tag">Figma</span>
+      </div>
+      <div class="project-links">
+        <a href="#" target="_blank" rel="noopener">↗ GitHub</a>
+        <a href="#" target="_blank" rel="noopener">↗ Live Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="container reveal">
+  <div class="eyebrow">Education</div>
+  <h2 class="section-title">Education & Certifications<span>Degrees, courses, and what's next</span></h2>
+  <div class="split-grid">
+    <div>
+      <div class="sub-head">Education</div>
+      <div class="edu-block">
+        <div class="edu-degree">B.A. (Hons) in Information Technology</div>
+        <div class="edu-school">University of Ruhuna, Matara, Sri Lanka</div>
+        <div class="edu-meta">2023 – Present · GPA 3.88/4.00 (First Class), 4th year</div>
+      </div>
+      <div class="edu-block">
+        <div class="edu-degree">G.C.E. Advanced Level Examination</div>
+        <div class="edu-school">Rippon Girls' College, Galle</div>
+      </div>
+
+      <div class="sub-head" style="margin-top:36px;">Languages</div>
+      <div class="edu-block" style="margin-bottom:0;">
+        <div class="edu-meta">Sinhala — Native · English — Professional working proficiency</div>
+      </div>
+    </div>
+    <div>
+      <div class="sub-head">Certifications — Completed</div>
+      <ul class="cert-list">
+        <li>Web Development — University of Moratuwa Open Learning Platform</li>
+        <li>Data, Database & Mining — Alison</li>
+        <li>Cloud Computing for Absolute Beginners (IaaS) — Alison</li>
+        <li>Introduction to Cybersecurity Awareness — HP LIFE</li>
+        <li>Presenting Data — HP LIFE</li>
+        <li>Critical Thinking in the AI Era — HP LIFE</li>
+        <li>Business Communications, Presentations & Email — HP LIFE</li>
+        <li>English Certificate Course — Royal English College</li>
+      </ul>
+
+      <div class="sub-head" style="margin-top:36px;">In Progress</div>
+      <ul class="cert-list progress">
+        <li>Python, Project Management & Front-End Web Dev — Univ. of Moratuwa</li>
+        <li>Diploma in Cyber Security — Alison</li>
+        <li>Diploma in Human Resource Management — IMD Campus</li>
+        <li>Diploma in Business Management — LPEC Campus</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer id="contact" class="reveal">
+  <div class="container">
+    <div class="foot-eyebrow">Get in touch</div>
+    <h3>Open to graduate roles in <em>Business Analytics</em> & <em>Software Engineering</em> — let's talk.</h3>
+    <div class="contact-links">
+      <a href="mailto:sakuniabegunawardhana@gmail.com">✉ sakuniabegunawardhana@gmail.com</a>
+      <a href="tel:+94779389726">☎ +94 77 938 9726</a>
+      <a href="https://linkedin.com/in/sakuni-n-301b77346" target="_blank" rel="noopener">in/sakuni-n-301b77346</a>
+      <a href="https://github.com/sakuninimsara2000" target="_blank" rel="noopener">github.com/sakuninimsara2000</a>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 Sakuni Nimsara Abeygunawardhana</span>
+      <span>Morawaka, Sri Lanka · References available on request</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var targets = document.querySelectorAll('.reveal');
+    var bars = document.querySelectorAll('.bar-fill');
+
+    if (prefersReduced || !('IntersectionObserver' in window)) {
+      targets.forEach(function(el){ el.classList.add('visible'); });
+      bars.forEach(function(b){ b.style.width = b.dataset.w + '%'; });
+      return;
+    }
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(function(el){ io.observe(el); });
+
+    // animate hero stat bars shortly after load
+    window.addEventListener('load', function(){
+      setTimeout(function(){
+        bars.forEach(function(b){ b.style.width = b.dataset.w + '%'; });
+      }, 250);
+    });
+  })();
+</script>
+
+</body>
+</html>
