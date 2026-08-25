@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sakuni Abeygunawardhana — Business Analytics & Software Engineering</title>
-<meta name="description" content="Portfolio of Sakuni Nimsara Abeygunawardhana — IT Undergraduate, aspiring Business Analyst & Software Engineer, University of Ruhuna.">
+<title>Sakuni Nimsara Abeygunawardhana — Business Analytics & Software Engineering & QA Engineer</title>
+<meta name="description" content="Portfolio of Sakuni Nimsara Abeygunawardhana — IT Undergraduate, aspiring Business Analyst & Software Engineer & QA Engineer, University of Ruhuna.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -15,9 +15,9 @@
     --ink: #12203A;
     --ink-soft: #566078;
     --muted: #8A93A6;
-    --accent: #2452C4;      /* corporate blue — primary highlight */
+    --accent: #2452C4;      
     --accent-soft: #E4EAFB;
-    --teal: #3C6DA8;        /* steel blue — secondary accent */
+    --teal: #3C6DA8;       
     --teal-soft: #E7EEF7;
     --line: #E4E1D6;
     --line-strong: #D3CFC0;
@@ -26,7 +26,7 @@
     --mono: 'JetBrains Mono', monospace;
   }
 
-  *{ margin:0; padding:0; box-sizing:border-box; }
+  { margin:0; padding:0; box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
   body{
     background:var(--bg);
@@ -41,7 +41,7 @@
 
   .container{ max-width:1040px; margin:0 auto; padding:0 32px; }
 
-  /* ---------- faint paper texture ---------- */
+ 
   .paper{
     position:fixed; inset:0; z-index:-1;
     background-image: radial-gradient(var(--line-strong) 1px, transparent 1px);
@@ -49,7 +49,7 @@
     opacity:0.35;
   }
 
-  /* ---------- Nav ---------- */
+  
   nav{
     position:sticky; top:0; z-index:50;
     background:rgba(246,245,240,0.86);
@@ -93,7 +93,6 @@
     color:var(--muted); margin-top:8px;
   }
 
-  /* ---------- Hero ---------- */
   .hero{ padding:76px 0 90px; }
   .hero-grid{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:44px; align-items:start; }
   @media (max-width:840px){ .hero-grid{ grid-template-columns:1fr; } }
@@ -124,7 +123,7 @@
   .btn.primary:hover{ background:var(--accent); border-color:var(--accent); transform:translateY(-2px); }
   .btn:not(.primary):hover{ border-color:var(--ink); color:var(--ink); transform:translateY(-2px); }
 
-  /* ---------- Hero photo card ---------- */
+  
   .hero-right{ display:flex; flex-direction:column; gap:20px; }
   .photo-card{
     background:var(--surface); border:1px solid var(--line); border-radius:12px;
@@ -141,7 +140,7 @@
   .photo-caption .pname{ font-family:var(--display); font-weight:600; font-size:14px; color:var(--ink); }
   .photo-caption .prole{ font-family:var(--mono); font-size:11.5px; color:var(--teal); }
 
-  /* ---------- Hero stat card (signature element: mini data widget) ---------- */
+  
   .stat-card{
     background:var(--surface); border:1px solid var(--line); border-radius:12px;
     padding:26px 26px 22px; box-shadow:0 1px 2px rgba(18,32,58,0.04), 0 24px 48px -32px rgba(18,32,58,0.18);
@@ -280,7 +279,7 @@
 
 <nav>
   <div class="nav-inner">
-    <div class="nav-brand">Sakuni<span class="dot">.</span></div>
+    <div class="nav-brand">Sakuni Nimsara Abeygunawardhana<span class="dot">.</span></div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -297,14 +296,17 @@
   <div class="hero-grid">
     <div>
       <div class="hero-eyebrow"><span class="pip"></span>Final-year IT Undergraduate · University of Ruhuna</div>
-      <h1>Sakuni Abeygunawardhana</h1>
-      <div class="hero-role">Aspiring Business Analyst <span class="sep">/</span> Software Engineer</div>
+      <h1>Sakuni Nimsara Abeygunawardhana</h1>
+     <div class="hero-role">
+  Aspiring Software Engineer <span class="sep">/</span> QA Engineer <span class="sep">/</span> Business Analyst
+</div>
       <p class="hero-lede">
-        I build software with a data-driven eye — from <strong>relational database design</strong> to
-        <strong>IoT-integrated systems</strong> — and I like translating messy requirements into things
-        people can actually use. Currently teaching IT to <strong>85+ students</strong> while finishing
-        my degree with a <strong>3.88 GPA</strong>.
-      </p>
+  I build and test software with a data-driven eye — from <strong>relational database design</strong> to
+  <strong>IoT-integrated systems</strong> — while focusing on writing reliable, user-friendly, and
+  high-quality solutions. I enjoy translating complex requirements into practical applications,
+  improving software quality through testing, and ensuring better user experiences. Currently teaching
+  IT to <strong>85+ students</strong> while finishing my degree with a <strong>3.89 GPA</strong>.
+</p>
       <div class="hero-actions">
         <a class="btn primary" href="#projects">View Projects →</a>
         <a class="btn" href="Sakuni-CV.pdf" download>↓ Download CV</a>
@@ -317,7 +319,7 @@
     <div class="photo-card">
       <img src="profile.jpg" alt="Sakuni Nimsara Abeygunawardhana">
       <div class="photo-caption">
-        <span class="pname">Sakuni Abeygunawardhana</span>
+        <span class="pname">Sakuni Nimsara Abeygunawardhana</span>
         <span class="prole">Matara, Sri Lanka</span>
       </div>
     </div>
@@ -325,7 +327,7 @@
     <div class="stat-card">
       <div class="stat-card-head"><span>Snapshot</span><span>2026</span></div>
       <div class="stat-row">
-        <div class="stat-row-top"><span class="stat-row-label">GPA (First Class)</span><span class="stat-row-val">3.88 / 4.00</span></div>
+        <div class="stat-row-top"><span class="stat-row-label">GPA (First Class)</span><span class="stat-row-val">3.89/ 4.00</span></div>
         <div class="bar-track"><div class="bar-fill" data-w="97"></div></div>
       </div>
       <div class="stat-row">
@@ -349,18 +351,20 @@
   <div class="eyebrow">About</div>
   <h2 class="section-title">Who I am<span>The short version</span></h2>
   <div class="about-grid">
-    <p class="lede">
-      Final-year <strong>Information Technology</strong> undergraduate with hands-on experience across
-      <strong>software development</strong>, <strong>relational database design</strong>, and
-      <strong>data analysis</strong>. Comfortable across Java, Python and SQL, with applied exposure to
-      requirement gathering, system analysis, and data mining through academic and IoT-based projects.
-      I'm currently teaching IT to 85+ students across two institutions — which has sharpened how I
-      explain technical ideas to non-technical people, a skill I'd bring straight into a business analyst
-      or software engineering role.
-    </p>
+   <p class="lede">
+  Final-year <strong>Information Technology</strong> undergraduate with hands-on experience across
+  <strong>software development</strong>, <strong>software testing</strong>,
+  <strong>relational database design</strong>, and <strong>data analysis</strong>. 
+  Comfortable with Java, Python, and SQL, with applied exposure to requirement gathering,
+  system analysis, quality assurance practices, and data mining through academic and IoT-based projects.
+  I'm currently teaching IT to <strong>85+ students</strong> across two institutions — an experience
+  that has strengthened my <strong>communication, presentation, and technical explanation skills</strong>,
+  enabling me to effectively bridge the gap between technical concepts and user requirements in
+  <strong>Software Engineering, QA Engineering, or Business Analyst roles</strong>.
+</p>
     <div class="about-facts">
       <div class="fact"><span class="fact-label">Degree</span><span class="fact-val">B.A. (Hons) IT, Univ. of Ruhuna</span></div>
-      <div class="fact"><span class="fact-label">GPA</span><span class="fact-val">3.88 / 4.00 — First Class</span></div>
+      <div class="fact"><span class="fact-label">GPA</span><span class="fact-val">3.89 / 4.00 — First Class</span></div>
       <div class="fact"><span class="fact-label">Focus</span><span class="fact-val">Business Analytics & Software Engineering</span></div>
       <div class="fact"><span class="fact-label">Currently</span><span class="fact-val">Teaching IT · finishing final year</span></div>
       <div class="fact"><span class="fact-label">Based in</span><span class="fact-val">Morawaka, Sri Lanka</span></div>
@@ -397,12 +401,17 @@
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-card-head"><span class="sw"></span>Business Analysis</div>
-      <div class="skill-tags">
-        <span class="tag">Requirement Gathering</span><span class="tag">System Analysis</span>
-        <span class="tag">SDLC</span><span class="tag">Software Testing</span>
-        <span class="tag">Technical Docs</span><span class="tag">Stakeholder Comms</span>
-      </div>
+      <div class="skill-card-head"><span class="sw"></span>Business Analysis & QA</div>
+<div class="skill-tags">
+  <span class="tag">Requirement Gathering</span>
+  <span class="tag">System Analysis</span>
+  <span class="tag">SDLC</span>
+  <span class="tag">Software Testing</span>
+  <span class="tag">Test Case Design</span>
+  <span class="tag">Bug Reporting</span>
+  <span class="tag">Technical Documentation</span>
+  <span class="tag">Stakeholder Communication</span>
+</div>
     </div>
     <div class="skill-card">
       <div class="skill-card-head"><span class="sw"></span>Databases</div>
@@ -535,7 +544,7 @@
       <div class="edu-block">
         <div class="edu-degree">B.A. (Hons) in Information Technology</div>
         <div class="edu-school">University of Ruhuna, Matara, Sri Lanka</div>
-        <div class="edu-meta">2023 – Present · GPA 3.88/4.00 (First Class), 4th year</div>
+        <div class="edu-meta">2023 – Present · GPA 3.89/4.00 (First Class), 4th year</div>
       </div>
       <div class="edu-block">
         <div class="edu-degree">G.C.E. Advanced Level Examination</div>
